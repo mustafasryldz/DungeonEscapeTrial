@@ -7,11 +7,11 @@ public class AdsManagerV2 : MonoBehaviour, IUnityAdsListener
 {
 
 #if UNITY_IOS
-    private string gameId = "1486551";
+    private string gameId = "1234567";
 #elif UNITY_ANDROID
-    private string gameId = "3899835";
+    private string gameId = "1234567";
 #endif
-
+    public bool testMode = false;
     public Button myButton;
     public string myPlacementId = "rewardedVideo";
 
@@ -27,7 +27,7 @@ public class AdsManagerV2 : MonoBehaviour, IUnityAdsListener
 
         // Initialize the Ads listener and service:
         Advertisement.AddListener(this);
-        Advertisement.Initialize(gameId, false);
+        Advertisement.Initialize(gameId, testMode);//
     }
 
     // Implement a function for showing a rewarded video ad:
